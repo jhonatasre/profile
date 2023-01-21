@@ -1,0 +1,57 @@
+body {
+    background-color: #282C34;
+}
+
+.btn-terminal {
+    color: #32FA05;
+    padding: 5px 10px;
+    border-width: 2px;
+    margin-right: 10px;
+    background-color: unset;
+    border-color: #32FA05;
+    border-style: dashed outset;
+}
+
+.btn-terminal:hover,
+.btn-terminal:active {
+    background-color: #32FA05;
+    color: #333842;
+    border-color: #333842;
+}
+
+#terminal {
+    color: #32FA05;
+    overflow-y: auto;
+    margin-top: 35px;
+    padding: 15px 20px;
+    height: calc(100vh - 70px);
+    background-color: #333842;
+    min-height: calc(100vh - 70px);
+    max-height: calc(100vh - 70px);
+}
+
+#output {
+    margin-top: 20px;
+}
+
+.content-input {
+    display: flex;
+}
+
+.content-input input:focus-visible {
+    outline: none;
+}
+
+.content-input span {
+    padding: 0 2px;
+    margin-left: 10px;
+    display: none;
+}
+
+.content-input input {
+    background-color: transparent;
+    border: unset;
+    color: #32FA05;
+    width: 100%;
+    margin-left: 10px;
+}

@@ -1,3 +1,5 @@
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+
 function runTerminal(comando) {
     var el = $(".content-input input");
     var span = $(el).prev()[0];
@@ -13,6 +15,8 @@ function runTerminal(comando) {
         'certificados': () => showCertificados(),
         'experiencias': () => showExperiencias(),
         'tecnologias': () => showTecnologias(),
+        'easter-egg': () => showEasterEgg(),
+        'bug': () => showEasterEgg(),
         'limpar': () => limparTerminal(),
         'clear': () => limparTerminal()
     }
@@ -88,6 +92,9 @@ function showTecnologias() {
     $(".content-input input").val('tecnologias');
 
     let content = "\n";
+    content += "Já trabalhei em projetos utilizando as seguintes tecnologias:";
+    content += "\n";
+    content += 'Marcação: HTML, XML;                                                         ' + "\n";
     content += 'Backend: PHP, Laravel, Zend, Node.js;                                   ' + "\n";
     content += 'Frontend: JavaScript, JQuery, ReactJs, NextJs, Angular, CSS, Sass, Less;' + "\n";
     content += 'Banco de Dados: Mysql, SqlServer, MariaDB, MongoDB, Postgress;          ' + "\n";
@@ -114,6 +121,47 @@ function showAjuda() {
     content += "\n";
 
     return content;
+}
+
+async function showEasterEgg() {
+    $('.content-input').remove();
+    $('#output').html('');
+
+    var content1 = '';
+    content1 += '    ▓▓          ▓▓    ' + "\n";
+    content1 += '      ▓▓      ▓▓      ' + "\n";
+    content1 += '    ▓▓▓▓▓▓▓▓▓▓▓▓▓▓    ' + "\n";
+    content1 += '  ▓▓▓▓  ▓▓▓▓▓▓  ▓▓▓▓  ' + "\n";
+    content1 += '▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓' + "\n";
+    content1 += '▓▓  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓  ▓▓' + "\n";
+    content1 += '▓▓  ▓▓          ▓▓  ▓▓' + "\n";
+    content1 += '      ▓▓▓▓  ▓▓▓▓      ' + "\n";
+
+    var content2 = '';
+    content2 += '    ▓▓          ▓▓    ' + "\n";
+    content2 += '      ▓▓      ▓▓      ' + "\n";
+    content2 += '▓▓  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓  ▓▓' + "\n";
+    content2 += '▓▓▓▓▓▓  ▓▓▓▓▓▓  ▓▓▓▓▓▓' + "\n";
+    content2 += '▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓' + "\n";
+    content2 += '  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  ' + "\n";
+    content2 += '    ▓▓          ▓▓    ' + "\n";
+    content2 += '  ▓▓              ▓▓  ' + "\n";
+
+    $('#output').html(content1);
+    await sleep(300);
+
+    for (let index = 0; index < 5; index++) {
+        $('#output').html(content2);
+        await sleep(300);
+        $('#output').html(content1);
+        await sleep(300);
+    }
+
+    $('#output').html('');
+    $('#output').append(areaInput());
+    $(".content-input input").focus();
+
+    return '';
 }
 
 function readInput(el, event) {

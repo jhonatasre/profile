@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jhonatas Reis | Sobre</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
   <link rel="stylesheet" href="./style.css" />
   <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-  <!-- <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script> -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
   <script src="./main.js"></script>
 </head>
@@ -17,17 +17,51 @@
 <body>
   <div class="container">
     <div class="row">
+      <div class="col-md-2 d-flex text-center align-items-center justify-content-center flex-column">
+        <img src="./assets/img/image.jpg" class="img-fluid circle" alt="Imagem de Perfil">
+        <ul class="list-group" id="list-socials">
+          <li class="list-group-item">
+            <a href="https://www.linkedin.com/jhonatas.reis.matos" target="_blank">
+              <i class="fa-brands fa-linkedin"></i>
+              jhonatas.reis.matos
+            </a>
+          </li>
+          <li class="list-group-item">
+            <a href="https://github.com/jhonatasre" target="_blank">
+              <i class="fa-brands fa-github"></i>
+              jhonatasre
+            </a>
+          </li>
+          <li class="list-group-item">
+            <a href="https://www.instagram.com/jhonatasre" target="_blank">
+              <i class="fa-brands fa-instagram"></i>
+              @jhonatasre
+            </a>
+          </li>
+          <li class="list-group-item">
+            <a href="https://www.facebook.com/jhonatas7" target="_blank">
+              <i class="fa-brands fa-facebook"></i>
+              jhonatas7
+            </a>
+          </li>
+        </ul>
+      </div>
       <div class="col-md-10">
+        <div id="actions-content">
+          <button class="btn-terminal" id="btn-limpar">Limpar</button>
+          <button class="btn-terminal" id="btn-certificados">Certificados</button>
+          <button class="btn-terminal" id="btn-experiencias">Experiências</button>
+          <button class="btn-terminal" id="btn-tecnologias">Tecnologias</button>
+          <button class="btn-terminal" id="btn-ajuda">Ajuda</button>
+        </div>
         <div id="terminal">
-          <div id="actions-content">
-            <button class="btn-terminal" id="btn-limpar">Limpar</button>
-            <button class="btn-terminal" id="btn-certificados">Certificados</button>
-            <button class="btn-terminal" id="btn-experiencias">Experiências</button>
-            <button class="btn-terminal" id="btn-tecnologias">Tecnologias</button>
-            <button class="btn-terminal" id="btn-ajuda">Ajuda</button>
-          </div>
           <pre id="output"></pre>
         </div>
+      </div>
+    </div>
+    <div class="row" id="copy">
+      <div class="col-md-12 text-center">
+        <span>By Jhonatas R. M.</span>
       </div>
     </div>
   </div>

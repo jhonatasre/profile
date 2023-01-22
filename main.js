@@ -1,4 +1,13 @@
 function runTerminal(comando) {
+    var el = $(".content-input input");
+    var span = $(el).prev()[0];
+
+    var value = $("<div>").text($.trim(comando)).html();
+
+    $(".content-input input").remove();
+    span.style.display = 'block';
+    span.innerHTML = value;
+
     var comandos = {
         'ajuda': () => showAjuda(),
         'certificados': () => showCertificados(),
@@ -8,16 +17,28 @@ function runTerminal(comando) {
         'clear': () => limparTerminal()
     }
 
-    return (comandos[comando] || (() => false))();
+    var resultado = (comandos[comando] || (() => false))();
+
+    if (resultado || resultado === '') {
+        $('#output').append(resultado);
+        $('#output').append(areaInput());
+        $(".content-input input").focus();
+
+        return true;
+    }
+
+    $('#output').append(`Comando '${value}' não encontrado.`);
+    $('#output').append(areaInput());
+    $(".content-input input").focus();
+
+    return false;
 }
 
 function limparTerminal() {
     $('.content-input').remove();
     $('#output').html('');
 
-    $('#output').append(areaInput());
-    $(".content-input input").focus();
-    return true;
+    return '';
 }
 
 function areaInput() {
@@ -42,10 +63,7 @@ function showCertificados() {
     content += '----------------------------------------------------------------------------------------------------' + "\n";
     content += "\n";
 
-    $('#output').append(content);
-    $('#output').append(areaInput());
-    $(".content-input input").focus();
-    return true;
+    return content;
 }
 
 function showExperiencias() {
@@ -63,11 +81,7 @@ function showExperiencias() {
     content += '------------------------------------------------------------------------------------------------' + "\n";
     content += "\n";
 
-    $('#output').append(content);
-    $('#output').append(areaInput());
-    $(".content-input input").focus();
-
-    return true;
+    return content;
 }
 
 function showTecnologias() {
@@ -83,11 +97,7 @@ function showTecnologias() {
     content += 'Outros: Git, Docker.                                                    ' + "\n";
     content += "\n";
 
-    $('#output').append(content);
-    $('#output').append(areaInput());
-    $(".content-input input").focus();
-
-    return true;
+    return content;
 }
 
 function showAjuda() {
@@ -103,32 +113,21 @@ function showAjuda() {
     content += 'ajuda         |                                                   ' + "\n";
     content += "\n";
 
-    $('#output').append(content);
-    $('#output').append(areaInput());
-    $(".content-input input").focus();
-
-    return true;
+    return content;
 }
 
 function readInput(el, event) {
     if (event.keyCode == 13) {
-        var value = $("<div>").text(el.value).html();
-        var span = $(el).prev()[0];
-
-        $(".content-input input").remove();
-        span.style.display = 'block';
-        span.innerHTML = value;
-
-        if (!runTerminal(value)) {
-            $('#output').append(`Comando '${value}' não encontrado.`);
-            $('#output').append(areaInput());
-            $(".content-input input").focus();
-        }
+        runTerminal(el.value);
     }
 }
 $(document).ready(function () {
     $('#output').html(areaInput());
     $(".content-input input").focus();
+
+    $('#terminal').click(function () {
+        $(".content-input input").focus();
+    });
 
     $('#btn-limpar').click(function () {
         runTerminal('limpar');

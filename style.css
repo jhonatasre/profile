@@ -2,6 +2,10 @@ body {
     background-color: #282C34;
 }
 
+.circle {
+    border-radius: 100%;
+}
+
 .btn-terminal {
     color: #32FA05;
     padding: 5px 10px;
@@ -19,15 +23,20 @@ body {
     border-color: #333842;
 }
 
+#actions-content {
+    margin-top: 35px;
+    padding: 15px 20px;
+    background-color: #21252B;
+}
+
 #terminal {
     color: #32FA05;
     overflow-y: auto;
-    margin-top: 35px;
     padding: 15px 20px;
-    height: calc(100vh - 70px);
+    height: calc(100vh - 150px);
     background-color: #333842;
-    min-height: calc(100vh - 70px);
-    max-height: calc(100vh - 70px);
+    min-height: calc(100vh - 150px);
+    max-height: calc(100vh - 150px);
 }
 
 #output {
@@ -54,4 +63,23 @@ body {
     color: #32FA05;
     width: 100%;
     margin-left: 10px;
+}
+
+#list-socials {
+    margin-top: 25px;
+}
+
+#list-socials li a {
+    color: #9DA39D;
+}
+
+#list-socials li {
+    border: unset;
+    padding: 5px 0;
+    background: unset;
+}
+
+#copy {
+    padding: 10px 0;
+    color: #9DA39D;
 }

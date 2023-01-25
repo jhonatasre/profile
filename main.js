@@ -16,6 +16,7 @@ function runTerminal(comando) {
         'experiencias': () => showExperiencias(),
         'tecnologias': () => showTecnologias(),
         'easter-egg': () => showEasterEgg(),
+        'carteiras-criptos': () => showCarteirasCriptos(),
         'bug': () => showEasterEgg(),
         'limpar': () => limparTerminal(),
         'clear': () => limparTerminal()
@@ -111,13 +112,40 @@ function showAjuda() {
     $(".content-input input").val('ajuda');
 
     let content = "\n";
-    content += 'Comandos disponíveis                                              ' + "\n";
-    content += '----------------------------------------------------------------- ' + "\n";
-    content += 'limpar, clear | Limpa todo o conteúdo que foi exibido no terminal.' + "\n";
-    content += 'certificados  | Exibe alguns dos certificados que possuo          ' + "\n";
-    content += 'experiencias  | Exibe um pouco do caminho que tracei              ' + "\n";
-    content += 'tecnologias   | Tecnologias que em eu trabalhei                   ' + "\n";
-    content += 'ajuda         |                                                   ' + "\n";
+    content += 'Comandos disponíveis                                                  ' + "\n";
+    content += '--------------------------------------------------------------------- ' + "\n";
+    content += 'limpar, clear     | Limpa todo o conteúdo que foi exibido no terminal.' + "\n";
+    content += 'certificados      | Exibe alguns dos certificados que possuo          ' + "\n";
+    content += 'experiencias      | Exibe um pouco do caminho que tracei              ' + "\n";
+    content += 'tecnologias       | Tecnologias que em eu trabalhei                   ' + "\n";
+    content += 'carteiras-criptos | Carteiras para doação de criptomoedas             ' + "\n";
+    content += 'ajuda             |                                                   ' + "\n";
+    content += "\n";
+
+    return content;
+}
+
+function showCarteirasCriptos() {
+    $(".content-input input").val('carteiras-criptos');
+
+    let content = "\n";
+    content += '   ▓▓  ▓▓                                       ' + "\n";
+    content += '▓▓▓▓▓▓▓▓▓▓▓                                     ' + "\n";
+    content += '  ▓▓▓    ▓▓▓                                    ' + "\n";
+    content += '  ▓▓▓    ▓▓▓                                    ' + "\n";
+    content += '  ▓▓▓▓▓▓▓▓▓                                     ' + "\n";
+    content += '  ▓▓▓    ▓▓▓                                    ' + "\n";
+    content += '  ▓▓▓     ▓▓▓                                   ' + "\n";
+    content += '  ▓▓▓     ▓▓▓                                   ' + "\n";
+    content += '▓▓▓▓▓▓▓▓▓▓▓▓                                    ' + "\n";
+    content += '   ▓▓  ▓▓                                       ' + "\n";
+    content += '                                                ' + "\n";
+    content += 'Toda Doação é bem-vinda :D                      ' + "\n";
+    content += '                                                ' + "\n";
+    content += 'Minhas carterias de cripto moedas               ' + "\n";
+    content += '------------------------------------------------' + "\n";
+    content += 'BTC | bc1qpljuk3xdprqht8l7yjdkcnkez2tlkx9j39xka8' + "\n";
+    content += 'ETH | 0x141B52491736ED0Ee2CE176C67225aABb3d83455' + "\n";
     content += "\n";
 
     return content;
@@ -141,7 +169,7 @@ async function showEasterEgg() {
     content2 += '    ▓▓          ▓▓    ' + "\n";
     content2 += '      ▓▓      ▓▓      ' + "\n";
     content2 += '▓▓  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓  ▓▓' + "\n";
-    content2 += '▓▓▓▓▓▓  ▓▓▓▓▓▓  ▓▓▓▓▓▓' + "\n";
+    content2 += '▓▓  ▓▓  ▓▓▓▓▓▓  ▓▓  ▓▓' + "\n";
     content2 += '▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓' + "\n";
     content2 += '  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  ' + "\n";
     content2 += '    ▓▓          ▓▓    ' + "\n";
@@ -169,6 +197,7 @@ function readInput(el, event) {
         runTerminal(el.value);
     }
 }
+
 $(document).ready(function () {
     $('#output').html(areaInput());
     $(".content-input input").focus();

@@ -42,8 +42,6 @@ $(document).ready(function () {
         showNewSystem();
     }
 
-    $("#meudiv").draggable();
-
     $('#moment-time').text(moment().format('HH:mm:ss'));
     $('#moment-date').text(moment().format('DD/MM/YYYY'));
 

@@ -8,10 +8,14 @@
   <title>Jhonatas Reis | Sobre</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
-  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./old-system.css" />
+  <link rel="stylesheet" href="./new-system.css" />
   <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
   <script src="./main.js"></script>
+  <script src="./old-system.js"></script>
+  <script src="./new-system.js"></script>
 
   <head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LY8T59808Z"></script>
@@ -28,7 +32,7 @@
   </head>
 
 <body>
-  <div class="container">
+  <div class="container" id="system-old">
     <div class="row">
       <div class="col-md-2 d-flex text-center align-items-center justify-content-center flex-column">
         <img src="./assets/img/image.jpg" class="img-fluid circle" alt="Imagem de Perfil">
@@ -75,6 +79,100 @@
     <div class="row" id="copy">
       <div class="col-md-12 text-center">
         <span>By Jhonatas R. M.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" id="system-new">
+    <div class="row" id="loadding">
+      <div id="profile-new">
+        <img src="./assets/img/image.jpg" class="img-fluid circle" alt="Imagem de Perfil">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50px" height="50px" viewBox="0 0 100 100">
+          <path d="M10 50A40 40 0 0 0 90 50A40 42 0 0 1 10 50" fill="#ffffff" stroke="none">
+            <animateTransform attributeName="transform" type="rotate" dur="1s" repeatCount="indefinite" keyTimes="0;1" values="0 50 51;360 50 51"></animateTransform>
+          </path>
+        </svg>
+        <span id="text-loading">Carregando ...</span>
+      </div>
+    </div>
+    <div class="row" id="os">
+      <div id="loading-div">
+        <div id="item-icons">
+          <a href="javascript:void(0)">
+            <img src="./assets/img/icon-linkedin.png" alt="Linkedin" />
+            <span>Linkedin</span>
+          </a>
+          <a href="javascript:void(0)">
+            <img src="./assets/img/icon-facebook.png" alt="Linkedin" />
+            <span>Facebook</span>
+          </a>
+          <a href="javascript:void(0)">
+            <img src="./assets/img/icon-git.png" alt="Linkedin" />
+            <span>Git</span>
+          </a>
+          <a href="javascript:void(0)">
+            <img src="./assets/img/icon-instagram.png" alt="Linkedin" />
+            <span>Instagram</span>
+          </a>
+        </div>
+      </div>
+
+      <div id="menu" data-show="off">
+        <div id="menu-left">
+          <div id="menu-left-top">
+            <a href="javascript:void(0)" title="Informações do sistema">
+              <img src="./assets/img/icon-info.png" alt="Info" />
+            </a>
+          </div>
+          <div id="menu-left-bottom">
+            <a href="javascript:turnOff()" title="Desligar">
+              <img src="./assets/img/on-off.png" alt="Power On/Off" />
+            </a>
+          </div>
+        </div>
+
+        <div id="menu-right">
+          <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action">
+              <img src="./assets/img/icon-bitcoin.png" />
+              <span>Carteiras de Criptomoedas</span>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+              <img src="./assets/img/icon-certificados.png" />
+              <span>Certificados</span>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+              <img src="./assets/img/icon-code.png" />
+              <span>Tecnologias</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div id="status-bar">
+        <a href="javascript:toggleMenu()" id="start-button">
+          <img src="./assets/img/icon.png" alt="">
+        </a>
+        <div id="docker-right">
+          <div id="date-time">
+            <span id="moment-time">00:00:00</span>
+            <span id="moment-date">00/00/0000</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal-turn-off" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body text-center">
+          O sistema se desligará em <span id="timer-turn-off">0</span> segundos.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="btn-stop-turn-off">Cancelar</button>
+        </div>
       </div>
     </div>
   </div>

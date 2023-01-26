@@ -9,6 +9,6 @@ var timerShowNewSystem = 3000;
 var timerTurnOff = 5 * 1000;
 var timerTurnOffSecond = 1000;
 
-var initNewSystem = true;
+var initNewSystem = false;
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));

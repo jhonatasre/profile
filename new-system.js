@@ -1,4 +1,5 @@
 function turnOff() {
+    toggleMenu();
     $('#modal-turn-off').modal('show');
     $('#timer-turn-off').text((timerTurnOff / 1000));
 

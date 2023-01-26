@@ -195,11 +195,15 @@ function showNewSystem() {
     $('#system-old').hide();
     $('#system-new').show();
 
+    $('.content-input').remove();
+    $('#output').html('');
+
     setTimeout(function () {
         $('#loadding').hide();
         $('#os').show();
     }, timerShowNewSystem);
-    return true;
+
+    return '';
 }
 
 function readInput(el, event) {

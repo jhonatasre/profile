@@ -185,3 +185,55 @@
     width: 40px;
     height: 40px;
 }
+
+.window-view {
+    width: 450px;
+    min-width: 450px;
+    max-width: 100%;
+
+    height: 300px;
+    min-height: 300px;
+    max-height: 100vh;
+    padding: 10px;
+
+    position: fixed;
+}
+
+.window-header {
+    padding: 5px;
+    height: 40px;
+    display: flex;
+    column-gap: 5px;
+    align-items: center;
+    justify-content: end;
+    background-color: #21252B;
+}
+
+.btn-window {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    color: #000;
+    border-radius: 100%;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.btn-window-minimaze {
+    background-color: #9DA39D;
+}
+
+.btn-window-expanded {
+    background-color: #E5C07B;
+}
+
+.btn-window-close {
+    background-color: #C16266;
+}
+
+.window-content {
+    height: 100%;
+    color: #21252B;
+    background-color: #ffffff;
+}
